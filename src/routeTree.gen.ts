@@ -10,8 +10,19 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeeklyRouteImport } from './routes/weekly'
+import { Route as ValuesRouteImport } from './routes/values'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SelfRouteImport } from './routes/self'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as MonthlyGoalsRouteImport } from './routes/monthly-goals'
+import { Route as MindsetRouteImport } from './routes/mindset'
+import { Route as InnerSeasonsRouteImport } from './routes/inner-seasons'
+import { Route as InfluencesRouteImport } from './routes/influences'
+import { Route as HabitsRouteImport } from './routes/habits'
+import { Route as DayRouteImport } from './routes/day'
 import { Route as CycleRouteImport } from './routes/cycle'
+import { Route as BeliefsRouteImport } from './routes/beliefs'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WeeklyRoute = WeeklyRouteImport.update({
@@ -19,14 +30,69 @@ const WeeklyRoute = WeeklyRouteImport.update({
   path: '/weekly',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ValuesRoute = ValuesRouteImport.update({
+  id: '/values',
+  path: '/values',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SelfRoute = SelfRouteImport.update({
+  id: '/self',
+  path: '/self',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MonthlyGoalsRoute = MonthlyGoalsRouteImport.update({
   id: '/monthly-goals',
   path: '/monthly-goals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MindsetRoute = MindsetRouteImport.update({
+  id: '/mindset',
+  path: '/mindset',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InnerSeasonsRoute = InnerSeasonsRouteImport.update({
+  id: '/inner-seasons',
+  path: '/inner-seasons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfluencesRoute = InfluencesRouteImport.update({
+  id: '/influences',
+  path: '/influences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HabitsRoute = HabitsRouteImport.update({
+  id: '/habits',
+  path: '/habits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DayRoute = DayRouteImport.update({
+  id: '/day',
+  path: '/day',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CycleRoute = CycleRouteImport.update({
   id: '/cycle',
   path: '/cycle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BeliefsRoute = BeliefsRouteImport.update({
+  id: '/beliefs',
+  path: '/beliefs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,35 +103,125 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/beliefs': typeof BeliefsRoute
   '/cycle': typeof CycleRoute
+  '/day': typeof DayRoute
+  '/habits': typeof HabitsRoute
+  '/influences': typeof InfluencesRoute
+  '/inner-seasons': typeof InnerSeasonsRoute
+  '/mindset': typeof MindsetRoute
   '/monthly-goals': typeof MonthlyGoalsRoute
+  '/reports': typeof ReportsRoute
+  '/reviews': typeof ReviewsRoute
+  '/self': typeof SelfRoute
+  '/settings': typeof SettingsRoute
+  '/values': typeof ValuesRoute
   '/weekly': typeof WeeklyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/beliefs': typeof BeliefsRoute
   '/cycle': typeof CycleRoute
+  '/day': typeof DayRoute
+  '/habits': typeof HabitsRoute
+  '/influences': typeof InfluencesRoute
+  '/inner-seasons': typeof InnerSeasonsRoute
+  '/mindset': typeof MindsetRoute
   '/monthly-goals': typeof MonthlyGoalsRoute
+  '/reports': typeof ReportsRoute
+  '/reviews': typeof ReviewsRoute
+  '/self': typeof SelfRoute
+  '/settings': typeof SettingsRoute
+  '/values': typeof ValuesRoute
   '/weekly': typeof WeeklyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/beliefs': typeof BeliefsRoute
   '/cycle': typeof CycleRoute
+  '/day': typeof DayRoute
+  '/habits': typeof HabitsRoute
+  '/influences': typeof InfluencesRoute
+  '/inner-seasons': typeof InnerSeasonsRoute
+  '/mindset': typeof MindsetRoute
   '/monthly-goals': typeof MonthlyGoalsRoute
+  '/reports': typeof ReportsRoute
+  '/reviews': typeof ReviewsRoute
+  '/self': typeof SelfRoute
+  '/settings': typeof SettingsRoute
+  '/values': typeof ValuesRoute
   '/weekly': typeof WeeklyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cycle' | '/monthly-goals' | '/weekly'
+  fullPaths:
+    | '/'
+    | '/beliefs'
+    | '/cycle'
+    | '/day'
+    | '/habits'
+    | '/influences'
+    | '/inner-seasons'
+    | '/mindset'
+    | '/monthly-goals'
+    | '/reports'
+    | '/reviews'
+    | '/self'
+    | '/settings'
+    | '/values'
+    | '/weekly'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cycle' | '/monthly-goals' | '/weekly'
-  id: '__root__' | '/' | '/cycle' | '/monthly-goals' | '/weekly'
+  to:
+    | '/'
+    | '/beliefs'
+    | '/cycle'
+    | '/day'
+    | '/habits'
+    | '/influences'
+    | '/inner-seasons'
+    | '/mindset'
+    | '/monthly-goals'
+    | '/reports'
+    | '/reviews'
+    | '/self'
+    | '/settings'
+    | '/values'
+    | '/weekly'
+  id:
+    | '__root__'
+    | '/'
+    | '/beliefs'
+    | '/cycle'
+    | '/day'
+    | '/habits'
+    | '/influences'
+    | '/inner-seasons'
+    | '/mindset'
+    | '/monthly-goals'
+    | '/reports'
+    | '/reviews'
+    | '/self'
+    | '/settings'
+    | '/values'
+    | '/weekly'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BeliefsRoute: typeof BeliefsRoute
   CycleRoute: typeof CycleRoute
+  DayRoute: typeof DayRoute
+  HabitsRoute: typeof HabitsRoute
+  InfluencesRoute: typeof InfluencesRoute
+  InnerSeasonsRoute: typeof InnerSeasonsRoute
+  MindsetRoute: typeof MindsetRoute
   MonthlyGoalsRoute: typeof MonthlyGoalsRoute
+  ReportsRoute: typeof ReportsRoute
+  ReviewsRoute: typeof ReviewsRoute
+  SelfRoute: typeof SelfRoute
+  SettingsRoute: typeof SettingsRoute
+  ValuesRoute: typeof ValuesRoute
   WeeklyRoute: typeof WeeklyRoute
 }
 
@@ -78,6 +234,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WeeklyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/values': {
+      id: '/values'
+      path: '/values'
+      fullPath: '/values'
+      preLoaderRoute: typeof ValuesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/self': {
+      id: '/self'
+      path: '/self'
+      fullPath: '/self'
+      preLoaderRoute: typeof SelfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/monthly-goals': {
       id: '/monthly-goals'
       path: '/monthly-goals'
@@ -85,11 +276,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MonthlyGoalsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mindset': {
+      id: '/mindset'
+      path: '/mindset'
+      fullPath: '/mindset'
+      preLoaderRoute: typeof MindsetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inner-seasons': {
+      id: '/inner-seasons'
+      path: '/inner-seasons'
+      fullPath: '/inner-seasons'
+      preLoaderRoute: typeof InnerSeasonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/influences': {
+      id: '/influences'
+      path: '/influences'
+      fullPath: '/influences'
+      preLoaderRoute: typeof InfluencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/habits': {
+      id: '/habits'
+      path: '/habits'
+      fullPath: '/habits'
+      preLoaderRoute: typeof HabitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/day': {
+      id: '/day'
+      path: '/day'
+      fullPath: '/day'
+      preLoaderRoute: typeof DayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cycle': {
       id: '/cycle'
       path: '/cycle'
       fullPath: '/cycle'
       preLoaderRoute: typeof CycleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/beliefs': {
+      id: '/beliefs'
+      path: '/beliefs'
+      fullPath: '/beliefs'
+      preLoaderRoute: typeof BeliefsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,8 +337,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BeliefsRoute: BeliefsRoute,
   CycleRoute: CycleRoute,
+  DayRoute: DayRoute,
+  HabitsRoute: HabitsRoute,
+  InfluencesRoute: InfluencesRoute,
+  InnerSeasonsRoute: InnerSeasonsRoute,
+  MindsetRoute: MindsetRoute,
   MonthlyGoalsRoute: MonthlyGoalsRoute,
+  ReportsRoute: ReportsRoute,
+  ReviewsRoute: ReviewsRoute,
+  SelfRoute: SelfRoute,
+  SettingsRoute: SettingsRoute,
+  ValuesRoute: ValuesRoute,
   WeeklyRoute: WeeklyRoute,
 }
 export const routeTree = rootRouteImport
