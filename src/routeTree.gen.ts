@@ -9,154 +9,181 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WeeklyRouteImport } from './routes/weekly'
-import { Route as ValuesRouteImport } from './routes/values'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as SelfRouteImport } from './routes/self'
-import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as ReportsRouteImport } from './routes/reports'
-import { Route as MonthlyGoalsRouteImport } from './routes/monthly-goals'
-import { Route as MindsetRouteImport } from './routes/mindset'
-import { Route as InnerSeasonsRouteImport } from './routes/inner-seasons'
-import { Route as InfluencesRouteImport } from './routes/influences'
-import { Route as HabitsRouteImport } from './routes/habits'
-import { Route as DayRouteImport } from './routes/day'
-import { Route as CycleRouteImport } from './routes/cycle'
-import { Route as BeliefsRouteImport } from './routes/beliefs'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
+import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-password'
+import { Route as AuthenticatedWeeklyRouteImport } from './routes/_authenticated/weekly'
+import { Route as AuthenticatedValuesRouteImport } from './routes/_authenticated/values'
+import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
+import { Route as AuthenticatedSelfRouteImport } from './routes/_authenticated/self'
+import { Route as AuthenticatedReviewsRouteImport } from './routes/_authenticated/reviews'
+import { Route as AuthenticatedReportsRouteImport } from './routes/_authenticated/reports'
+import { Route as AuthenticatedMonthlyGoalsRouteImport } from './routes/_authenticated/monthly-goals'
+import { Route as AuthenticatedMindsetRouteImport } from './routes/_authenticated/mindset'
+import { Route as AuthenticatedInnerSeasonsRouteImport } from './routes/_authenticated/inner-seasons'
+import { Route as AuthenticatedInfluencesRouteImport } from './routes/_authenticated/influences'
+import { Route as AuthenticatedHabitsRouteImport } from './routes/_authenticated/habits'
+import { Route as AuthenticatedDayRouteImport } from './routes/_authenticated/day'
+import { Route as AuthenticatedCycleRouteImport } from './routes/_authenticated/cycle'
+import { Route as AuthenticatedBeliefsRouteImport } from './routes/_authenticated/beliefs'
 
-const WeeklyRoute = WeeklyRouteImport.update({
-  id: '/weekly',
-  path: '/weekly',
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ValuesRoute = ValuesRouteImport.update({
-  id: '/values',
-  path: '/values',
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SelfRoute = SelfRouteImport.update({
-  id: '/self',
-  path: '/self',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReviewsRoute = ReviewsRouteImport.update({
-  id: '/reviews',
-  path: '/reviews',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReportsRoute = ReportsRouteImport.update({
-  id: '/reports',
-  path: '/reports',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MonthlyGoalsRoute = MonthlyGoalsRouteImport.update({
-  id: '/monthly-goals',
-  path: '/monthly-goals',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MindsetRoute = MindsetRouteImport.update({
-  id: '/mindset',
-  path: '/mindset',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InnerSeasonsRoute = InnerSeasonsRouteImport.update({
-  id: '/inner-seasons',
-  path: '/inner-seasons',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InfluencesRoute = InfluencesRouteImport.update({
-  id: '/influences',
-  path: '/influences',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HabitsRoute = HabitsRouteImport.update({
-  id: '/habits',
-  path: '/habits',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DayRoute = DayRouteImport.update({
-  id: '/day',
-  path: '/day',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CycleRoute = CycleRouteImport.update({
-  id: '/cycle',
-  path: '/cycle',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BeliefsRoute = BeliefsRouteImport.update({
-  id: '/beliefs',
-  path: '/beliefs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
+const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthenticatedWeeklyRoute = AuthenticatedWeeklyRouteImport.update({
+  id: '/weekly',
+  path: '/weekly',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedValuesRoute = AuthenticatedValuesRouteImport.update({
+  id: '/values',
+  path: '/values',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedSelfRoute = AuthenticatedSelfRouteImport.update({
+  id: '/self',
+  path: '/self',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedReviewsRoute = AuthenticatedReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedReportsRoute = AuthenticatedReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedMonthlyGoalsRoute =
+  AuthenticatedMonthlyGoalsRouteImport.update({
+    id: '/monthly-goals',
+    path: '/monthly-goals',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedMindsetRoute = AuthenticatedMindsetRouteImport.update({
+  id: '/mindset',
+  path: '/mindset',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedInnerSeasonsRoute =
+  AuthenticatedInnerSeasonsRouteImport.update({
+    id: '/inner-seasons',
+    path: '/inner-seasons',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedInfluencesRoute = AuthenticatedInfluencesRouteImport.update({
+  id: '/influences',
+  path: '/influences',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedHabitsRoute = AuthenticatedHabitsRouteImport.update({
+  id: '/habits',
+  path: '/habits',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedDayRoute = AuthenticatedDayRouteImport.update({
+  id: '/day',
+  path: '/day',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedCycleRoute = AuthenticatedCycleRouteImport.update({
+  id: '/cycle',
+  path: '/cycle',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedBeliefsRoute = AuthenticatedBeliefsRouteImport.update({
+  id: '/beliefs',
+  path: '/beliefs',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/beliefs': typeof BeliefsRoute
-  '/cycle': typeof CycleRoute
-  '/day': typeof DayRoute
-  '/habits': typeof HabitsRoute
-  '/influences': typeof InfluencesRoute
-  '/inner-seasons': typeof InnerSeasonsRoute
-  '/mindset': typeof MindsetRoute
-  '/monthly-goals': typeof MonthlyGoalsRoute
-  '/reports': typeof ReportsRoute
-  '/reviews': typeof ReviewsRoute
-  '/self': typeof SelfRoute
-  '/settings': typeof SettingsRoute
-  '/values': typeof ValuesRoute
-  '/weekly': typeof WeeklyRoute
+  '/': typeof AuthenticatedIndexRoute
+  '/auth': typeof AuthRouteWithChildren
+  '/beliefs': typeof AuthenticatedBeliefsRoute
+  '/cycle': typeof AuthenticatedCycleRoute
+  '/day': typeof AuthenticatedDayRoute
+  '/habits': typeof AuthenticatedHabitsRoute
+  '/influences': typeof AuthenticatedInfluencesRoute
+  '/inner-seasons': typeof AuthenticatedInnerSeasonsRoute
+  '/mindset': typeof AuthenticatedMindsetRoute
+  '/monthly-goals': typeof AuthenticatedMonthlyGoalsRoute
+  '/reports': typeof AuthenticatedReportsRoute
+  '/reviews': typeof AuthenticatedReviewsRoute
+  '/self': typeof AuthenticatedSelfRoute
+  '/settings': typeof AuthenticatedSettingsRoute
+  '/values': typeof AuthenticatedValuesRoute
+  '/weekly': typeof AuthenticatedWeeklyRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/beliefs': typeof BeliefsRoute
-  '/cycle': typeof CycleRoute
-  '/day': typeof DayRoute
-  '/habits': typeof HabitsRoute
-  '/influences': typeof InfluencesRoute
-  '/inner-seasons': typeof InnerSeasonsRoute
-  '/mindset': typeof MindsetRoute
-  '/monthly-goals': typeof MonthlyGoalsRoute
-  '/reports': typeof ReportsRoute
-  '/reviews': typeof ReviewsRoute
-  '/self': typeof SelfRoute
-  '/settings': typeof SettingsRoute
-  '/values': typeof ValuesRoute
-  '/weekly': typeof WeeklyRoute
+  '/auth': typeof AuthRouteWithChildren
+  '/beliefs': typeof AuthenticatedBeliefsRoute
+  '/cycle': typeof AuthenticatedCycleRoute
+  '/day': typeof AuthenticatedDayRoute
+  '/habits': typeof AuthenticatedHabitsRoute
+  '/influences': typeof AuthenticatedInfluencesRoute
+  '/inner-seasons': typeof AuthenticatedInnerSeasonsRoute
+  '/mindset': typeof AuthenticatedMindsetRoute
+  '/monthly-goals': typeof AuthenticatedMonthlyGoalsRoute
+  '/reports': typeof AuthenticatedReportsRoute
+  '/reviews': typeof AuthenticatedReviewsRoute
+  '/self': typeof AuthenticatedSelfRoute
+  '/settings': typeof AuthenticatedSettingsRoute
+  '/values': typeof AuthenticatedValuesRoute
+  '/weekly': typeof AuthenticatedWeeklyRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/': typeof AuthenticatedIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/beliefs': typeof BeliefsRoute
-  '/cycle': typeof CycleRoute
-  '/day': typeof DayRoute
-  '/habits': typeof HabitsRoute
-  '/influences': typeof InfluencesRoute
-  '/inner-seasons': typeof InnerSeasonsRoute
-  '/mindset': typeof MindsetRoute
-  '/monthly-goals': typeof MonthlyGoalsRoute
-  '/reports': typeof ReportsRoute
-  '/reviews': typeof ReviewsRoute
-  '/self': typeof SelfRoute
-  '/settings': typeof SettingsRoute
-  '/values': typeof ValuesRoute
-  '/weekly': typeof WeeklyRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRouteWithChildren
+  '/_authenticated/beliefs': typeof AuthenticatedBeliefsRoute
+  '/_authenticated/cycle': typeof AuthenticatedCycleRoute
+  '/_authenticated/day': typeof AuthenticatedDayRoute
+  '/_authenticated/habits': typeof AuthenticatedHabitsRoute
+  '/_authenticated/influences': typeof AuthenticatedInfluencesRoute
+  '/_authenticated/inner-seasons': typeof AuthenticatedInnerSeasonsRoute
+  '/_authenticated/mindset': typeof AuthenticatedMindsetRoute
+  '/_authenticated/monthly-goals': typeof AuthenticatedMonthlyGoalsRoute
+  '/_authenticated/reports': typeof AuthenticatedReportsRoute
+  '/_authenticated/reviews': typeof AuthenticatedReviewsRoute
+  '/_authenticated/self': typeof AuthenticatedSelfRoute
+  '/_authenticated/settings': typeof AuthenticatedSettingsRoute
+  '/_authenticated/values': typeof AuthenticatedValuesRoute
+  '/_authenticated/weekly': typeof AuthenticatedWeeklyRoute
+  '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/_authenticated/': typeof AuthenticatedIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/auth'
     | '/beliefs'
     | '/cycle'
     | '/day'
@@ -171,9 +198,10 @@ export interface FileRouteTypes {
     | '/settings'
     | '/values'
     | '/weekly'
+    | '/auth/reset-password'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
+    | '/auth'
     | '/beliefs'
     | '/cycle'
     | '/day'
@@ -188,169 +216,218 @@ export interface FileRouteTypes {
     | '/settings'
     | '/values'
     | '/weekly'
+    | '/auth/reset-password'
+    | '/'
   id:
     | '__root__'
-    | '/'
-    | '/beliefs'
-    | '/cycle'
-    | '/day'
-    | '/habits'
-    | '/influences'
-    | '/inner-seasons'
-    | '/mindset'
-    | '/monthly-goals'
-    | '/reports'
-    | '/reviews'
-    | '/self'
-    | '/settings'
-    | '/values'
-    | '/weekly'
+    | '/_authenticated'
+    | '/auth'
+    | '/_authenticated/beliefs'
+    | '/_authenticated/cycle'
+    | '/_authenticated/day'
+    | '/_authenticated/habits'
+    | '/_authenticated/influences'
+    | '/_authenticated/inner-seasons'
+    | '/_authenticated/mindset'
+    | '/_authenticated/monthly-goals'
+    | '/_authenticated/reports'
+    | '/_authenticated/reviews'
+    | '/_authenticated/self'
+    | '/_authenticated/settings'
+    | '/_authenticated/values'
+    | '/_authenticated/weekly'
+    | '/auth/reset-password'
+    | '/_authenticated/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  BeliefsRoute: typeof BeliefsRoute
-  CycleRoute: typeof CycleRoute
-  DayRoute: typeof DayRoute
-  HabitsRoute: typeof HabitsRoute
-  InfluencesRoute: typeof InfluencesRoute
-  InnerSeasonsRoute: typeof InnerSeasonsRoute
-  MindsetRoute: typeof MindsetRoute
-  MonthlyGoalsRoute: typeof MonthlyGoalsRoute
-  ReportsRoute: typeof ReportsRoute
-  ReviewsRoute: typeof ReviewsRoute
-  SelfRoute: typeof SelfRoute
-  SettingsRoute: typeof SettingsRoute
-  ValuesRoute: typeof ValuesRoute
-  WeeklyRoute: typeof WeeklyRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/weekly': {
-      id: '/weekly'
-      path: '/weekly'
-      fullPath: '/weekly'
-      preLoaderRoute: typeof WeeklyRouteImport
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/values': {
-      id: '/values'
-      path: '/values'
-      fullPath: '/values'
-      preLoaderRoute: typeof ValuesRouteImport
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/self': {
-      id: '/self'
-      path: '/self'
-      fullPath: '/self'
-      preLoaderRoute: typeof SelfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reviews': {
-      id: '/reviews'
-      path: '/reviews'
-      fullPath: '/reviews'
-      preLoaderRoute: typeof ReviewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reports': {
-      id: '/reports'
-      path: '/reports'
-      fullPath: '/reports'
-      preLoaderRoute: typeof ReportsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/monthly-goals': {
-      id: '/monthly-goals'
-      path: '/monthly-goals'
-      fullPath: '/monthly-goals'
-      preLoaderRoute: typeof MonthlyGoalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mindset': {
-      id: '/mindset'
-      path: '/mindset'
-      fullPath: '/mindset'
-      preLoaderRoute: typeof MindsetRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/inner-seasons': {
-      id: '/inner-seasons'
-      path: '/inner-seasons'
-      fullPath: '/inner-seasons'
-      preLoaderRoute: typeof InnerSeasonsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/influences': {
-      id: '/influences'
-      path: '/influences'
-      fullPath: '/influences'
-      preLoaderRoute: typeof InfluencesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/habits': {
-      id: '/habits'
-      path: '/habits'
-      fullPath: '/habits'
-      preLoaderRoute: typeof HabitsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/day': {
-      id: '/day'
-      path: '/day'
-      fullPath: '/day'
-      preLoaderRoute: typeof DayRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cycle': {
-      id: '/cycle'
-      path: '/cycle'
-      fullPath: '/cycle'
-      preLoaderRoute: typeof CycleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/beliefs': {
-      id: '/beliefs'
-      path: '/beliefs'
-      fullPath: '/beliefs'
-      preLoaderRoute: typeof BeliefsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
+    '/_authenticated/': {
+      id: '/_authenticated/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AuthenticatedIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/auth/reset-password': {
+      id: '/auth/reset-password'
+      path: '/reset-password'
+      fullPath: '/auth/reset-password'
+      preLoaderRoute: typeof AuthResetPasswordRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_authenticated/weekly': {
+      id: '/_authenticated/weekly'
+      path: '/weekly'
+      fullPath: '/weekly'
+      preLoaderRoute: typeof AuthenticatedWeeklyRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/values': {
+      id: '/_authenticated/values'
+      path: '/values'
+      fullPath: '/values'
+      preLoaderRoute: typeof AuthenticatedValuesRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/settings': {
+      id: '/_authenticated/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthenticatedSettingsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/self': {
+      id: '/_authenticated/self'
+      path: '/self'
+      fullPath: '/self'
+      preLoaderRoute: typeof AuthenticatedSelfRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/reviews': {
+      id: '/_authenticated/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof AuthenticatedReviewsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/reports': {
+      id: '/_authenticated/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof AuthenticatedReportsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/monthly-goals': {
+      id: '/_authenticated/monthly-goals'
+      path: '/monthly-goals'
+      fullPath: '/monthly-goals'
+      preLoaderRoute: typeof AuthenticatedMonthlyGoalsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/mindset': {
+      id: '/_authenticated/mindset'
+      path: '/mindset'
+      fullPath: '/mindset'
+      preLoaderRoute: typeof AuthenticatedMindsetRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/inner-seasons': {
+      id: '/_authenticated/inner-seasons'
+      path: '/inner-seasons'
+      fullPath: '/inner-seasons'
+      preLoaderRoute: typeof AuthenticatedInnerSeasonsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/influences': {
+      id: '/_authenticated/influences'
+      path: '/influences'
+      fullPath: '/influences'
+      preLoaderRoute: typeof AuthenticatedInfluencesRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/habits': {
+      id: '/_authenticated/habits'
+      path: '/habits'
+      fullPath: '/habits'
+      preLoaderRoute: typeof AuthenticatedHabitsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/day': {
+      id: '/_authenticated/day'
+      path: '/day'
+      fullPath: '/day'
+      preLoaderRoute: typeof AuthenticatedDayRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/cycle': {
+      id: '/_authenticated/cycle'
+      path: '/cycle'
+      fullPath: '/cycle'
+      preLoaderRoute: typeof AuthenticatedCycleRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/beliefs': {
+      id: '/_authenticated/beliefs'
+      path: '/beliefs'
+      fullPath: '/beliefs'
+      preLoaderRoute: typeof AuthenticatedBeliefsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedBeliefsRoute: typeof AuthenticatedBeliefsRoute
+  AuthenticatedCycleRoute: typeof AuthenticatedCycleRoute
+  AuthenticatedDayRoute: typeof AuthenticatedDayRoute
+  AuthenticatedHabitsRoute: typeof AuthenticatedHabitsRoute
+  AuthenticatedInfluencesRoute: typeof AuthenticatedInfluencesRoute
+  AuthenticatedInnerSeasonsRoute: typeof AuthenticatedInnerSeasonsRoute
+  AuthenticatedMindsetRoute: typeof AuthenticatedMindsetRoute
+  AuthenticatedMonthlyGoalsRoute: typeof AuthenticatedMonthlyGoalsRoute
+  AuthenticatedReportsRoute: typeof AuthenticatedReportsRoute
+  AuthenticatedReviewsRoute: typeof AuthenticatedReviewsRoute
+  AuthenticatedSelfRoute: typeof AuthenticatedSelfRoute
+  AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
+  AuthenticatedValuesRoute: typeof AuthenticatedValuesRoute
+  AuthenticatedWeeklyRoute: typeof AuthenticatedWeeklyRoute
+  AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedBeliefsRoute: AuthenticatedBeliefsRoute,
+  AuthenticatedCycleRoute: AuthenticatedCycleRoute,
+  AuthenticatedDayRoute: AuthenticatedDayRoute,
+  AuthenticatedHabitsRoute: AuthenticatedHabitsRoute,
+  AuthenticatedInfluencesRoute: AuthenticatedInfluencesRoute,
+  AuthenticatedInnerSeasonsRoute: AuthenticatedInnerSeasonsRoute,
+  AuthenticatedMindsetRoute: AuthenticatedMindsetRoute,
+  AuthenticatedMonthlyGoalsRoute: AuthenticatedMonthlyGoalsRoute,
+  AuthenticatedReportsRoute: AuthenticatedReportsRoute,
+  AuthenticatedReviewsRoute: AuthenticatedReviewsRoute,
+  AuthenticatedSelfRoute: AuthenticatedSelfRoute,
+  AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
+  AuthenticatedValuesRoute: AuthenticatedValuesRoute,
+  AuthenticatedWeeklyRoute: AuthenticatedWeeklyRoute,
+  AuthenticatedIndexRoute: AuthenticatedIndexRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
+interface AuthRouteChildren {
+  AuthResetPasswordRoute: typeof AuthResetPasswordRoute
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthResetPasswordRoute: AuthResetPasswordRoute,
+}
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  BeliefsRoute: BeliefsRoute,
-  CycleRoute: CycleRoute,
-  DayRoute: DayRoute,
-  HabitsRoute: HabitsRoute,
-  InfluencesRoute: InfluencesRoute,
-  InnerSeasonsRoute: InnerSeasonsRoute,
-  MindsetRoute: MindsetRoute,
-  MonthlyGoalsRoute: MonthlyGoalsRoute,
-  ReportsRoute: ReportsRoute,
-  ReviewsRoute: ReviewsRoute,
-  SelfRoute: SelfRoute,
-  SettingsRoute: SettingsRoute,
-  ValuesRoute: ValuesRoute,
-  WeeklyRoute: WeeklyRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

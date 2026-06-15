@@ -4,7 +4,7 @@ import { useRows, create } from "@/lib/store";
 import { todayISO, fmtDate } from "@/lib/dates";
 import { useState } from "react";
 
-export const Route = createFileRoute("/reviews")({
+export const Route = createFileRoute("/_authenticated/reviews")({
   head: () => ({ meta: [{ title: "المراجعات" }] }),
   component: ReviewsPage,
 });

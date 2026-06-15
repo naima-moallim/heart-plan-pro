@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell, PageHeader, Card } from "@/components/Shell";
 
-export const Route = createFileRoute("/self")({
+export const Route = createFileRoute("/_authenticated/self")({
   head: () => ({ meta: [{ title: "أفهم نفسي" }] }),
   component: SelfPage,
 });

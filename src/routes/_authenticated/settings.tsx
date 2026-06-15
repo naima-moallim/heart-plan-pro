@@ -3,7 +3,7 @@ import { Shell, PageHeader, Card } from "@/components/Shell";
 import { useAppsUrl, pullFromSheet, getUserId } from "@/lib/store";
 import { useState } from "react";
 
-export const Route = createFileRoute("/settings")({
+export const Route = createFileRoute("/_authenticated/settings")({
   head: () => ({ meta: [{ title: "الإعدادات" }] }),
   component: SettingsPage,
 });

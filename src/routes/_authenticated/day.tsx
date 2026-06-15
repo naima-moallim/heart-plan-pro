@@ -5,7 +5,7 @@ import { fmtDate, todayISO } from "@/lib/dates";
 import { TASK_CATEGORIES, TASK_STATUSES, PRIORITIES, ENERGY_LEVELS } from "@/lib/constants";
 import { useState } from "react";
 
-export const Route = createFileRoute("/day")({
+export const Route = createFileRoute("/_authenticated/day")({
   validateSearch: (s: Record<string, unknown>) => ({
     tired: s.tired === true || s.tired === "true",
     date: (s.date as string) || "",

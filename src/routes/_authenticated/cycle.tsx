@@ -5,7 +5,7 @@ import { useState } from "react";
 import { buildWeeks, fmtDate, todayISO } from "@/lib/dates";
 import { format, addMonths } from "date-fns";
 
-export const Route = createFileRoute("/cycle")({
+export const Route = createFileRoute("/_authenticated/cycle")({
   head: () => ({ meta: [{ title: "خطتي — دورات التخطيط" }] }),
   component: CyclePage,
 });

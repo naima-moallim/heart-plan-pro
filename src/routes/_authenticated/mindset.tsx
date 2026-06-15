@@ -4,7 +4,7 @@ import { useRows, create, remove } from "@/lib/store";
 import { MINDSET_TYPES } from "@/lib/constants";
 import { useState } from "react";
 
-export const Route = createFileRoute("/mindset")({
+export const Route = createFileRoute("/_authenticated/mindset")({
   head: () => ({ meta: [{ title: "اكتشاف العقلية" }] }),
   component: MindsetPage,
 });

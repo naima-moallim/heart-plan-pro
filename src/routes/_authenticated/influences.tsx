@@ -4,7 +4,7 @@ import { useRows, create, remove } from "@/lib/store";
 import { INFLUENCE_TYPES } from "@/lib/constants";
 import { useState } from "react";
 
-export const Route = createFileRoute("/influences")({
+export const Route = createFileRoute("/_authenticated/influences")({
   head: () => ({ meta: [{ title: "رصد المؤثرات" }] }),
   component: InfluencesPage,
 });
