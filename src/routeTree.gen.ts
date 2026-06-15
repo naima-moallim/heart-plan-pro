@@ -19,6 +19,7 @@ import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticat
 import { Route as AuthenticatedSelfRouteImport } from './routes/_authenticated/self'
 import { Route as AuthenticatedReviewsRouteImport } from './routes/_authenticated/reviews'
 import { Route as AuthenticatedReportsRouteImport } from './routes/_authenticated/reports'
+import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as AuthenticatedMonthlyGoalsRouteImport } from './routes/_authenticated/monthly-goals'
 import { Route as AuthenticatedMindsetRouteImport } from './routes/_authenticated/mindset'
 import { Route as AuthenticatedInnerSeasonsRouteImport } from './routes/_authenticated/inner-seasons'
@@ -77,6 +78,11 @@ const AuthenticatedReportsRoute = AuthenticatedReportsRouteImport.update({
   path: '/reports',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedMonthlyGoalsRoute =
   AuthenticatedMonthlyGoalsRouteImport.update({
     id: '/monthly-goals',
@@ -131,6 +137,7 @@ export interface FileRoutesByFullPath {
   '/inner-seasons': typeof AuthenticatedInnerSeasonsRoute
   '/mindset': typeof AuthenticatedMindsetRoute
   '/monthly-goals': typeof AuthenticatedMonthlyGoalsRoute
+  '/profile': typeof AuthenticatedProfileRoute
   '/reports': typeof AuthenticatedReportsRoute
   '/reviews': typeof AuthenticatedReviewsRoute
   '/self': typeof AuthenticatedSelfRoute
@@ -149,6 +156,7 @@ export interface FileRoutesByTo {
   '/inner-seasons': typeof AuthenticatedInnerSeasonsRoute
   '/mindset': typeof AuthenticatedMindsetRoute
   '/monthly-goals': typeof AuthenticatedMonthlyGoalsRoute
+  '/profile': typeof AuthenticatedProfileRoute
   '/reports': typeof AuthenticatedReportsRoute
   '/reviews': typeof AuthenticatedReviewsRoute
   '/self': typeof AuthenticatedSelfRoute
@@ -170,6 +178,7 @@ export interface FileRoutesById {
   '/_authenticated/inner-seasons': typeof AuthenticatedInnerSeasonsRoute
   '/_authenticated/mindset': typeof AuthenticatedMindsetRoute
   '/_authenticated/monthly-goals': typeof AuthenticatedMonthlyGoalsRoute
+  '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/_authenticated/reports': typeof AuthenticatedReportsRoute
   '/_authenticated/reviews': typeof AuthenticatedReviewsRoute
   '/_authenticated/self': typeof AuthenticatedSelfRoute
@@ -192,6 +201,7 @@ export interface FileRouteTypes {
     | '/inner-seasons'
     | '/mindset'
     | '/monthly-goals'
+    | '/profile'
     | '/reports'
     | '/reviews'
     | '/self'
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
     | '/inner-seasons'
     | '/mindset'
     | '/monthly-goals'
+    | '/profile'
     | '/reports'
     | '/reviews'
     | '/self'
@@ -230,6 +241,7 @@ export interface FileRouteTypes {
     | '/_authenticated/inner-seasons'
     | '/_authenticated/mindset'
     | '/_authenticated/monthly-goals'
+    | '/_authenticated/profile'
     | '/_authenticated/reports'
     | '/_authenticated/reviews'
     | '/_authenticated/self'
@@ -317,6 +329,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedReportsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/profile': {
+      id: '/_authenticated/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticatedProfileRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/monthly-goals': {
       id: '/_authenticated/monthly-goals'
       path: '/monthly-goals'
@@ -385,6 +404,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedInnerSeasonsRoute: typeof AuthenticatedInnerSeasonsRoute
   AuthenticatedMindsetRoute: typeof AuthenticatedMindsetRoute
   AuthenticatedMonthlyGoalsRoute: typeof AuthenticatedMonthlyGoalsRoute
+  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
   AuthenticatedReportsRoute: typeof AuthenticatedReportsRoute
   AuthenticatedReviewsRoute: typeof AuthenticatedReviewsRoute
   AuthenticatedSelfRoute: typeof AuthenticatedSelfRoute
@@ -403,6 +423,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedInnerSeasonsRoute: AuthenticatedInnerSeasonsRoute,
   AuthenticatedMindsetRoute: AuthenticatedMindsetRoute,
   AuthenticatedMonthlyGoalsRoute: AuthenticatedMonthlyGoalsRoute,
+  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
   AuthenticatedReportsRoute: AuthenticatedReportsRoute,
   AuthenticatedReviewsRoute: AuthenticatedReviewsRoute,
   AuthenticatedSelfRoute: AuthenticatedSelfRoute,
