@@ -30,6 +30,7 @@ function Home() {
   const weeks = useRows("Weekly_Plans", current ? { cycle_id: current.cycle_id } : undefined);
   const currentWeek = weeks.find(w => isCurrentRange(w.start_date, w.end_date));
   const values = useRows("Values");
+  const activeHabits = useRows("Habits", { status: "نشطة" });
 
   return (
     <Shell>
@@ -115,7 +116,7 @@ function Home() {
             </Card>
             <Card>
               <span className="block text-[10px] font-bold text-muted-foreground tracking-widest mb-2">العادات النشطة</span>
-              <p className="font-medium text-accent">{useRows("Habits", { status: "نشطة" }).length} عادة</p>
+              <p className="font-medium text-accent">{activeHabits.length} عادة</p>
             </Card>
           </div>
         </div>
