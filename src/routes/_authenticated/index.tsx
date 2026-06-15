@@ -3,7 +3,7 @@ import { Shell, Card } from "@/components/Shell";
 import { useRows } from "@/lib/store";
 import { fmtDate, isCurrentRange, todayISO } from "@/lib/dates";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_authenticated/")({
   head: () => ({
     meta: [
       { title: "حياة تشبهك — الرئيسية" },

@@ -1,7 +1,7 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { useEffect } from "react";
-import { pullFromSheet } from "@/lib/store";
+import { useAuth } from "@/hooks/use-auth";
+import { useHydrated } from "@/lib/store";
 
 const NAV = [
   { to: "/", label: "الرئيسية" },
@@ -11,15 +11,18 @@ const NAV = [
   { to: "/self", label: "أفهم نفسي" },
   { to: "/reviews", label: "المراجعات" },
   { to: "/reports", label: "التقارير" },
-  { to: "/settings", label: "الإعدادات" },
 ];
 
 export function Shell({ children }: { children: ReactNode }) {
   const path = useRouterState({ select: s => s.location.pathname });
+  const { user, signOut } = useAuth();
+  const hydrated = useHydrated();
+  const nav = useNavigate();
 
-  useEffect(() => {
-    pullFromSheet();
-  }, []);
+  const onSignOut = async () => {
+    await signOut();
+    nav({ to: "/auth" });
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -37,9 +40,7 @@ export function Shell({ children }: { children: ReactNode }) {
                   key={n.to}
                   to={n.to}
                   className={`px-3 py-2 rounded-full transition-colors ${
-                    active
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground/70 hover:bg-secondary/50"
+                    active ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:bg-secondary/50"
                   }`}
                 >
                   {n.label}
@@ -47,10 +48,22 @@ export function Shell({ children }: { children: ReactNode }) {
               );
             })}
           </nav>
+          <div className="flex items-center gap-2 text-sm">
+            <Link to="/profile" className="hidden sm:inline text-foreground/70 hover:text-foreground truncate max-w-[140px]">
+              {user?.email}
+            </Link>
+            <button onClick={onSignOut} className="px-3 py-1.5 rounded-full bg-secondary/60 hover:bg-secondary text-xs">
+              خروج
+            </button>
+          </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-10">{children}</main>
+      <main className="max-w-7xl mx-auto px-6 py-10">
+        {!hydrated ? (
+          <div className="text-center py-20 text-muted-foreground">جارٍ تحميل بياناتك...</div>
+        ) : children}
+      </main>
 
       <nav className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full px-3 py-2 flex gap-1 text-xs shadow-lg z-50 backdrop-blur max-w-[95vw] overflow-x-auto">
         {NAV.slice(0, 5).map(n => {

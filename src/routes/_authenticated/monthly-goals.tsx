@@ -4,7 +4,7 @@ import { useRows, create, update, remove } from "@/lib/store";
 import { useState } from "react";
 import { LIFE_AREAS } from "@/lib/constants";
 
-export const Route = createFileRoute("/monthly-goals")({
+export const Route = createFileRoute("/_authenticated/monthly-goals")({
   validateSearch: (s: Record<string, unknown>) => ({ cycle_id: (s.cycle_id as string) || "" }),
   head: () => ({ meta: [{ title: "أهداف الشهر" }] }),
   component: GoalsPage,

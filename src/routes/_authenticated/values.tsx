@@ -4,7 +4,7 @@ import { useRows, create, remove } from "@/lib/store";
 import { VALUE_QUESTIONS } from "@/lib/constants";
 import { useState } from "react";
 
-export const Route = createFileRoute("/values")({
+export const Route = createFileRoute("/_authenticated/values")({
   head: () => ({ meta: [{ title: "القيم" }] }),
   component: ValuesPage,
 });

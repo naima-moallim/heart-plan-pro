@@ -4,7 +4,7 @@ import { useRows, create, remove } from "@/lib/store";
 import { BELIEF_CATEGORIES } from "@/lib/constants";
 import { useState } from "react";
 
-export const Route = createFileRoute("/beliefs")({
+export const Route = createFileRoute("/_authenticated/beliefs")({
   head: () => ({ meta: [{ title: "تفكيك المعتقدات" }] }),
   component: BeliefsPage,
 });

@@ -5,7 +5,7 @@ import { INNER_SEASONS, SEASON_SUGGESTIONS } from "@/lib/constants";
 import { todayISO, fmtDate } from "@/lib/dates";
 import { useState } from "react";
 
-export const Route = createFileRoute("/inner-seasons")({
+export const Route = createFileRoute("/_authenticated/inner-seasons")({
   head: () => ({ meta: [{ title: "الفصل الداخلي" }] }),
   component: SeasonsPage,
 });

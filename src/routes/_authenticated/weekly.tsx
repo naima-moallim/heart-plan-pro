@@ -3,7 +3,7 @@ import { Shell, PageHeader, Card, Empty } from "@/components/Shell";
 import { useRows, update, bulkCreate } from "@/lib/store";
 import { daysBetween, fmtDate } from "@/lib/dates";
 
-export const Route = createFileRoute("/weekly")({
+export const Route = createFileRoute("/_authenticated/weekly")({
   validateSearch: (s: Record<string, unknown>) => ({ cycle_id: (s.cycle_id as string) || "" }),
   head: () => ({ meta: [{ title: "الأسابيع" }] }),
   component: WeeklyPage,

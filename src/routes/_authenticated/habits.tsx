@@ -4,7 +4,7 @@ import { useRows, create, update, remove } from "@/lib/store";
 import { HABIT_CATEGORIES, HABIT_LIBRARY } from "@/lib/constants";
 import { useState } from "react";
 
-export const Route = createFileRoute("/habits")({
+export const Route = createFileRoute("/_authenticated/habits")({
   head: () => ({ meta: [{ title: "عاداتي" }] }),
   component: HabitsPage,
 });
