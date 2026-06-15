@@ -24,7 +24,7 @@ function CyclePage() {
 
   const submit = () => {
     if (!form.cycle_name) return;
-    const cycle = create("Planning_Cycles", { ...form, cycle_type: "شهرية", status: "نشطة" });
+    const cycle: any = create("Planning_Cycles", { ...form, cycle_type: "شهرية", status: "نشطة" });
     const weeks = buildWeeks(form.start_date, form.end_date);
     bulkCreate("Weekly_Plans", weeks.map(w => ({
       cycle_id: cycle.cycle_id,

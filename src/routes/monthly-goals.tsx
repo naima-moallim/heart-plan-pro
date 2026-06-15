@@ -17,7 +17,7 @@ function GoalsPage() {
   const goals = useRows("Monthly_Goals", cycle_id ? { cycle_id } : undefined);
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({
-    goal_title: "", life_area: LIFE_AREAS[0], linked_value_id: "",
+    goal_title: "", life_area: LIFE_AREAS[0] as string, linked_value_id: "",
     why_important: "", success_measure: "", blocking_belief: "",
   });
 
